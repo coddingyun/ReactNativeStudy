@@ -6,7 +6,7 @@ import CameraIcon from '../assets/icons/camera.svg';
 import GalleryIcon from '../assets/icons/gallery.svg';
 import colors from '../styles/colors';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import ImageCropPicker from 'react-native-image-crop-picker';
+import ImageCropPicker, {Image} from 'react-native-image-crop-picker';
 
 const BottomSheetComp = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
@@ -36,7 +36,7 @@ const BottomSheetComp = () => {
     cropping: true,
   };
 
-  const storeImage = (image: any) => {
+  const storeImage = (image: Image) => {
     if (Platform.OS === 'android') {
       const {mime, modificationDate, path} = image;
       addImage({mime, modificationDate, path});

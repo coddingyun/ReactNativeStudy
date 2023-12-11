@@ -3,14 +3,14 @@ import {NavigationContainer} from '@react-navigation/native';
 import SplashScreen from 'react-native-splash-screen';
 import {Platform, StyleSheet} from 'react-native';
 import {requestPermissions} from './utils/requestPermissions';
-import AddButton from './components/AddButton';
+// import AddButton from './components/AddButton';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import BottomSheetComp from './components/BottomSheet';
 import StackNavigation from './navigators/Stack';
-import useStore from './store';
+// import useStore from './store';
 
 function App(): JSX.Element {
-  const isHome = useStore(state => state.isHome);
+  // const isHome = useStore(state => state.isHome);
 
   useEffect(() => {
     setTimeout(async () => {
@@ -22,10 +22,9 @@ function App(): JSX.Element {
     <GestureHandlerRootView style={styles.container}>
       <NavigationContainer>
         <BottomSheetComp />
-        {/* <TabNavigation /> */}
         <StackNavigation />
       </NavigationContainer>
-      {isHome && <AddButton />}
+      {/* {isHome && <AddButton />} */}
     </GestureHandlerRootView>
   );
 }
